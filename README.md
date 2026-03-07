@@ -50,13 +50,13 @@ Repos designed to be used with AI coding agents.
 ### Curated Collections and Toolkits
 
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - Skills, hooks, slash-commands, agents, and plugins for Claude Code.
-- [GitHub/awesome-copilot](https://github.com/github/awesome-copilot) - Official GitHub community instructions, prompts, and configurations.
+- [github/awesome-copilot](https://github.com/github/awesome-copilot) - Official GitHub community instructions, prompts, and configurations.
 - [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) - 135 agents, 35 skills, 42 commands, 120 plugins, and 19 hooks.
 - [josix/awesome-claude-md](https://github.com/josix/awesome-claude-md) - Curated exemplary CLAUDE.md files with analyses and best practices.
 
 ### Cursor Rules
 
-- [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) - Cursorrules configuration files for Cursor AI editor.
+- [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) - Collection of .cursorrules configuration files for Cursor AI editor.
 - [sanjeed5/awesome-cursor-rules-mdc](https://github.com/sanjeed5/awesome-cursor-rules-mdc) - 879+ .mdc files for Cursor agent mode.
 - [continuedev/awesome-rules](https://github.com/continuedev/awesome-rules) - Cross-platform rules for coding assistants using the amplified.dev standard.
 
@@ -71,7 +71,7 @@ Tools with UX and architecture patterns worth learning from.
 
 ### Modern Scaffolding Frameworks
 
-- [Vercel/turborepo](https://github.com/vercel/turborepo) - Zero-config TypeScript generators using existing workspace as template.
+- [vercel/turborepo](https://github.com/vercel/turborepo) - Zero-config TypeScript generators using existing workspace as template.
 - [t3-oss/create-t3-app](https://github.com/t3-oss/create-t3-app) - Interactive step-by-step prompts with modular optionality.
 - [nrwl/nx](https://github.com/nrwl/nx) - Plugin-based generators with custom workspace generators in TypeScript.
 - [oclif/oclif](https://github.com/oclif/oclif) - Lifecycle hooks and auto-generated help used by Salesforce and Heroku CLI.
