@@ -50,7 +50,7 @@ Repos designed to be used with AI coding agents.
 ### Curated Collections and Toolkits
 
 - [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - Skills, hooks, slash-commands, agents, and plugins for Claude Code.
-- [github/awesome-copilot](https://github.com/github/awesome-copilot) - Official GitHub community instructions, prompts, and configurations.
+- [GitHub/awesome-copilot](https://github.com/github/awesome-copilot) - Official GitHub community instructions, prompts, and configurations.
 - [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) - 135 agents, 35 skills, 42 commands, 120 plugins, and 19 hooks.
 - [josix/awesome-claude-md](https://github.com/josix/awesome-claude-md) - Curated exemplary CLAUDE.md files with analyses and best practices.
 
@@ -71,7 +71,7 @@ Tools with UX and architecture patterns worth learning from.
 
 ### Modern Scaffolding Frameworks
 
-- [vercel/turborepo](https://github.com/vercel/turborepo) - Zero-config TypeScript generators using existing workspace as template.
+- [Vercel/turborepo](https://github.com/vercel/turborepo) - Zero-config TypeScript generators using existing workspace as template.
 - [t3-oss/create-t3-app](https://github.com/t3-oss/create-t3-app) - Interactive step-by-step prompts with modular optionality.
 - [nrwl/nx](https://github.com/nrwl/nx) - Plugin-based generators with custom workspace generators in TypeScript.
 - [oclif/oclif](https://github.com/oclif/oclif) - Lifecycle hooks and auto-generated help used by Salesforce and Heroku CLI.
