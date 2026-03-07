@@ -52,3 +52,33 @@ Entries may be removed if they no longer meet quality standards. See the [remova
 - All PRs are automatically validated against quality criteria
 - Maintainers review submissions against the full checklist
 - Quarterly reviews ensure all entries remain up to date
+
+## Automated Link Health Monitoring
+
+This repository uses automated workflows to maintain link quality.
+
+### Link Checker (Weekly)
+
+A [lychee-based](https://github.com/lycheeverse/lychee-action) link checker runs every Sunday to detect broken links in README.md and CONTRIBUTING.md. When broken links are found, an issue is automatically created with the `link-rot` label.
+
+- **Configuration**: See `.lychee.toml` for timeout, retry, and exclusion settings
+- **Manual trigger**: Go to Actions > Link Check > Run workflow
+- **Excluded domains**: `img.shields.io` (badge SVGs) are excluded to avoid false positives
+
+### Project Health Check (Monthly)
+
+A monthly workflow checks each listed repository via the GitHub API:
+
+- **Archived**: Repository has been archived by its owner
+- **Stale**: No commits in the past 12 months
+- **Not Found**: Repository has been deleted or renamed
+
+When issues are detected, a health report is created as a GitHub issue with `link-rot` and `health-check` labels.
+
+### What to Do When Links Break
+
+1. Verify the link is truly broken (not a temporary outage)
+2. Search for the project's new URL if it was moved
+3. If the project is archived but still useful, add a note to its description
+4. If the project is deleted with no replacement, remove the entry
+5. Submit a PR with your fixes

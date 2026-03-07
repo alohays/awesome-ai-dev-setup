@@ -1,5 +1,7 @@
 # Awesome AI Dev Setup [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+![Link Check](https://github.com/alohays/awesome-ai-dev-setup/actions/workflows/link-check.yml/badge.svg)
+
 > A curated list of tools, templates, and configs for AI-assisted development.
 
 ## Contents

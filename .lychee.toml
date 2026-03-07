@@ -1,0 +1,29 @@
+# Lychee link checker configuration
+# https://github.com/lycheeverse/lychee
+
+cache = true
+max_cache_age = "1d"
+
+timeout = 30
+max_retries = 3
+max_concurrency = 8
+
+# Per-host rate limiting to avoid being blocked
+max_redirects = 10
+
+# Accept 429 (rate-limited) as not truly broken
+accept = ["100..=103", "200..=299", "429"]
+
+# Exclude URLs that cause false positives
+exclude = [
+  # Shields.io badge SVGs return varying status codes
+  "^https://img\\.shields\\.io/",
+  # LinkedIn blocks automated requests
+  "^https://www\\.linkedin\\.com/",
+]
+
+# Skip fragment checking (GitHub anchor links can be brittle)
+include_fragments = false
+
+# Reduce 403 responses from bot-blocking sites
+user_agent = "Mozilla/5.0 (compatible; lychee-link-checker)"
