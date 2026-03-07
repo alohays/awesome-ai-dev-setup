@@ -1,16 +1,19 @@
 # Awesome AI Dev Setup [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of tools, templates, and configs for AI-assisted development.
+> A curated list of tools, templates, and configs for developers using or building AI coding agents.
+
+Maintained by the [monitor-forge](https://github.com/monitor-forge) team. **Contributions welcome!** See the [contribution guidelines](CONTRIBUTING.md) and [code of conduct](code-of-conduct.md).
 
 ## Contents
 
 - [Agent-Native Templates](#agent-native-templates)
 - [Agent Config and Rules Sharing](#agent-config-and-rules-sharing)
 - [CLI Scaffolding Patterns](#cli-scaffolding-patterns)
+- [Related Lists](#related-lists)
 
 ## Agent-Native Templates
 
-Repos designed to be used with AI coding agents.
+Ready-made project scaffolds that give AI coding agents the context, structure, and tooling they need to work effectively. Start here if you want to build or migrate a project for agent-first development.
 
 ### Platforms and Standards
 
@@ -32,6 +35,8 @@ Repos designed to be used with AI coding agents.
 - [mastra-ai/template-coding-agent](https://github.com/mastra-ai/template-coding-agent) - TypeScript coding agent with E2B sandbox execution.
 
 ## Agent Config and Rules Sharing
+
+Shared configurations, rules, and skills that define how your AI agent should work across projects and teams. Compose these building blocks to enforce consistent workflows, coding standards, and tool integrations without repeating yourself.
 
 ### Multi-Agent Orchestration
 
@@ -67,7 +72,7 @@ Repos designed to be used with AI coding agents.
 
 ## CLI Scaffolding Patterns
 
-Tools with UX and architecture patterns worth learning from.
+Well-designed CLI tools whose architecture and UX patterns are worth studying when building AI-driven scaffolding or developer tooling. Each entry demonstrates a different approach to interactivity, extensibility, or template management.
 
 ### Modern Scaffolding Frameworks
 
@@ -89,3 +94,25 @@ Tools with UX and architecture patterns worth learning from.
 ## Contributing
 
 Contributions welcome! Read the [contribution guidelines](CONTRIBUTING.md) first.
+
+---
+
+## Related Lists
+
+- [awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) - A curated list of .cursorrules files for the Cursor AI editor; a proven success case in the AI agent tooling space.
+- [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) - A list of Free Software network services and web applications which can be hosted on your own server.
+- [awesome-react](https://github.com/enaqx/awesome-react) - A collection of awesome things regarding the React ecosystem, notable for its clear contribution policies and category structure.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alohays/awesome-ai-dev-setup&type=Date)](https://star-history.com/#alohays/awesome-ai-dev-setup&Date)
+
+---
+
+[Back to Top](#awesome-ai-dev-setup)
+
+## License
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, the [monitor-forge](https://github.com/monitor-forge) team has waived all copyright and related or neighboring rights to this work.
