@@ -1,0 +1,59 @@
+name: Broken Link / Inactive Project
+description: Report a broken link or an inactive/archived project in the list
+title: "[Broken Link] "
+labels: ["broken-link", "maintenance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the list accurate! Please provide details about the broken link or inactive project.
+
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+      description: The name of the project with the issue
+      placeholder: e.g., awesome-tool
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: The broken or problematic URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status-type
+    attributes:
+      label: Issue Type
+      description: What kind of issue is this?
+      options:
+        - Link returns 404
+        - Repository is archived/read-only
+        - Repository has been deleted
+        - Repository has not been updated in over a year
+        - Project has been renamed/moved
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: status-description
+    attributes:
+      label: Status Description
+      description: Describe the issue in more detail. If the project has moved, include the new URL.
+      placeholder: e.g., The repository was archived on 2024-01-01. New maintained fork is at https://github.com/...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have verified the link is indeed broken or the project is inactive
+          required: true
