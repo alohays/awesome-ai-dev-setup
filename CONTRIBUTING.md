@@ -29,3 +29,26 @@ Thank you for helping expand this list!
 - General AI/ML libraries (too broad)
 - Closed-source tools without public repos
 - Self-promotion without substance
+
+## Quality Criteria
+
+All submissions are evaluated against our [Quality Criteria](/docs/QUALITY_CRITERIA.md). Key requirements:
+
+- Repository must be at least 30 days old
+- At least 1 commit in the past 12 months
+- Must have a README with installation and usage instructions
+- Must have a license file
+- Must be relevant to AI-assisted development
+- Must not be a fork without significant original work
+
+New submissions are automatically validated by our CI pipeline, which checks repository metadata via the GitHub API.
+
+## Entry Removal
+
+Entries may be removed if they no longer meet quality standards. See the [removal policy](/docs/QUALITY_CRITERIA.md#removal--deprecation-policy) for details.
+
+## Review Process
+
+- All PRs are automatically validated against quality criteria
+- Maintainers review submissions against the full checklist
+- Quarterly reviews ensure all entries remain up to date

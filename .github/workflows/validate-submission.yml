@@ -1,0 +1,133 @@
+name: Validate Submission
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract new GitHub URLs from diff
+        id: extract
+        run: |
+          URLS=$(git diff origin/main...HEAD -- README.md \
+            | grep '^+' \
+            | grep -oE 'https://github\.com/[a-zA-Z0-9._-]+/[a-zA-Z0-9._-]+' \
+            | grep -v 'img.shields.io' \
+            | sort -u)
+
+          if [ -z "$URLS" ]; then
+            echo "no_urls=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "$URLS" > /tmp/new_urls.txt
+            echo "no_urls=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate repositories
+        if: steps.extract.outputs.no_urls != 'true'
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPORT=""
+          ALL_PASSED=true
+
+          while IFS= read -r url; do
+            REPO_PATH=$(echo "$url" | sed 's|https://github.com/||')
+            OWNER=$(echo "$REPO_PATH" | cut -d'/' -f1)
+            REPO=$(echo "$REPO_PATH" | cut -d'/' -f2)
+
+            REPORT="${REPORT}\n### ${OWNER}/${REPO}\n"
+
+            API_RESPONSE=$(gh api "repos/${OWNER}/${REPO}" 2>&1) || {
+              REPORT="${REPORT}- :x: Repository not found or not accessible\n"
+              ALL_PASSED=false
+              continue
+            }
+
+            ARCHIVED=$(echo "$API_RESPONSE" | jq -r '.archived')
+            if [ "$ARCHIVED" = "true" ]; then
+              REPORT="${REPORT}- :x: Repository is archived\n"
+              ALL_PASSED=false
+            else
+              REPORT="${REPORT}- :white_check_mark: Not archived\n"
+            fi
+
+            CREATED_AT=$(echo "$API_RESPONSE" | jq -r '.created_at')
+            CREATED_EPOCH=$(date -d "$CREATED_AT" +%s)
+            NOW_EPOCH=$(date +%s)
+            AGE_DAYS=$(( (NOW_EPOCH - CREATED_EPOCH) / 86400 ))
+            if [ "$AGE_DAYS" -ge 30 ]; then
+              REPORT="${REPORT}- :white_check_mark: Age: ${AGE_DAYS} days (min: 30)\n"
+            else
+              REPORT="${REPORT}- :x: Age: ${AGE_DAYS} days (min: 30)\n"
+              ALL_PASSED=false
+            fi
+
+            PUSHED_AT=$(echo "$API_RESPONSE" | jq -r '.pushed_at')
+            PUSHED_EPOCH=$(date -d "$PUSHED_AT" +%s)
+            DAYS_SINCE_PUSH=$(( (NOW_EPOCH - PUSHED_EPOCH) / 86400 ))
+            if [ "$DAYS_SINCE_PUSH" -le 365 ]; then
+              REPORT="${REPORT}- :white_check_mark: Last activity: ${DAYS_SINCE_PUSH} days ago\n"
+            else
+              REPORT="${REPORT}- :x: Last activity: ${DAYS_SINCE_PUSH} days ago (max: 365)\n"
+              ALL_PASSED=false
+            fi
+
+            LICENSE=$(echo "$API_RESPONSE" | jq -r '.license.spdx_id // "None"')
+            if [ "$LICENSE" != "None" ] && [ "$LICENSE" != "null" ]; then
+              REPORT="${REPORT}- :white_check_mark: License: ${LICENSE}\n"
+            else
+              REPORT="${REPORT}- :warning: No license detected (manual check recommended)\n"
+            fi
+
+            README_CHECK=$(gh api "repos/${OWNER}/${REPO}/readme" 2>&1) && {
+              REPORT="${REPORT}- :white_check_mark: README exists\n"
+            } || {
+              REPORT="${REPORT}- :x: No README found\n"
+              ALL_PASSED=false
+            }
+
+            IS_FORK=$(echo "$API_RESPONSE" | jq -r '.fork')
+            if [ "$IS_FORK" = "true" ]; then
+              REPORT="${REPORT}- :warning: Repository is a fork (manual review needed)\n"
+            else
+              REPORT="${REPORT}- :white_check_mark: Not a fork\n"
+            fi
+
+            REPORT="${REPORT}\n"
+          done < /tmp/new_urls.txt
+
+          if [ "$ALL_PASSED" = "true" ]; then
+            HEADER=":white_check_mark: **All automated checks passed**"
+          else
+            HEADER=":warning: **Some checks need attention**"
+          fi
+
+          REPO_URL="https://github.com/${{ github.repository }}"
+          printf "## Submission Validation Report\n\n%s\n\n%b\n---\n*Automated check — see [Quality Criteria](%s/blob/main/docs/QUALITY_CRITERIA.md) for details.*\n" "$HEADER" "$REPORT" "$REPO_URL" > /tmp/validation_comment.md
+
+      - name: Post validation comment
+        if: steps.extract.outputs.no_urls != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments" \
+            --jq '.[] | select(.body | startswith("## Submission Validation Report")) | .id')
+          for id in $EXISTING; do
+            gh api -X DELETE "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments/${id}"
+          done
+
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --body-file /tmp/validation_comment.md
