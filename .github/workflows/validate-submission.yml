@@ -115,7 +115,8 @@ jobs:
             HEADER=":warning: **Some checks need attention**"
           fi
 
-          printf "## Submission Validation Report\n\n%s\n\n%b\n---\n*Automated check — see [Quality Criteria](../docs/QUALITY_CRITERIA.md) for details.*\n" "$HEADER" "$REPORT" > /tmp/validation_comment.md
+          REPO_URL="https://github.com/${{ github.repository }}"
+          printf "## Submission Validation Report\n\n%s\n\n%b\n---\n*Automated check — see [Quality Criteria](%s/blob/main/docs/QUALITY_CRITERIA.md) for details.*\n" "$HEADER" "$REPORT" "$REPO_URL" > /tmp/validation_comment.md
 
       - name: Post validation comment
         if: steps.extract.outputs.no_urls != 'true'
