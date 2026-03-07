@@ -1,24 +1,30 @@
 ## Description
 
-<!-- Briefly describe what this PR adds or changes -->
+<!-- Brief description of what this PR changes -->
 
 ## Type of Change
 
-- [ ] New resource(s) added
-- [ ] Broken link / inactive project removed or updated
-- [ ] Documentation improvement
+- [ ] New entry submission
+- [ ] Entry update (description, category, etc.)
+- [ ] Entry removal
+- [ ] Documentation change
 - [ ] Other (describe below)
 
-## Checklist
+## Quality Checklist (for new entries)
 
-- [ ] Resources are placed in the correct category
-- [ ] Each description is under 100 characters
-- [ ] Badges use the Shields.io format: `[![Stars](https://img.shields.io/github/stars/owner/repo?style=flat-square)](url)`
-- [ ] Resources within each section are sorted in descending order by star count
-- [ ] All links are valid and point to active projects
-- [ ] No duplicate entries (resource is not already in the list)
-- [ ] PR title is clear and descriptive
+<!-- Check all that apply. See /docs/QUALITY_CRITERIA.md for details. -->
 
-## Related Issue
+- [ ] Project is at least 30 days old
+- [ ] Project has at least 1 commit in the past 12 months
+- [ ] Project has a README with installation and usage instructions
+- [ ] Project is publicly accessible
+- [ ] Project is relevant to AI-assisted development
+- [ ] Project is not a fork without significant original work
+- [ ] Project has a license file
 
-<!-- Link the issue this PR resolves, e.g., Closes #123 -->
+## Format Checklist
+
+- [ ] Description is accurate and concise (under 100 characters)
+- [ ] Entry placed in the correct category
+- [ ] No duplicate entries in the list
+- [ ] Entry follows list format: `- [org/repo](url) - Description ending with a period.`
