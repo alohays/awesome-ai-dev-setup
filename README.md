@@ -17,6 +17,11 @@ Repos designed to be used with AI coding agents.
 ### Platforms and Standards
 
 - [agentsmd/agents.md](https://github.com/agentsmd/agents.md) - Open standard for guiding coding agents.
+- [agentscope-ai/CoPaw](https://github.com/agentscope-ai/CoPaw) - Self-hosted personal AI assistant with extensible skills and multi-channel support.
+- [LAION-AI/Open-Assistant](https://github.com/LAION-AI/Open-Assistant) - Chat-based AI assistant with third-party integrations and dynamic information retrieval.
+- [leon-ai/leon](https://github.com/leon-ai/leon) - Open-source personal assistant with modular skills architecture on your server.
+- [openclaw/openclaw](https://github.com/openclaw/openclaw) - Self-hosted personal AI assistant with 13,700+ community skills across any platform.
+- [TabbyML/tabby](https://github.com/TabbyML/tabby) - Self-hosted AI coding assistant as an on-premises Copilot alternative.
 - [vercel-labs/coding-agent-template](https://github.com/vercel-labs/coding-agent-template) - Multi-agent AI coding platform with Vercel Sandbox and AI Gateway.
 - [vercel-labs/knowledge-agent-template](https://github.com/vercel-labs/knowledge-agent-template) - File-system and knowledge-based agent template.
 
