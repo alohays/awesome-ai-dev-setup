@@ -126,7 +126,7 @@ jobs:
           EXISTING=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments" \
             --jq '.[] | select(.body | startswith("## Submission Validation Report")) | .id')
           for id in $EXISTING; do
-            gh api -X DELETE "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments/${id}"
+            gh api -X DELETE "repos/${{ github.repository }}/issues/comments/${id}"
           done
 
           gh pr comment "${{ github.event.pull_request.number }}" \
