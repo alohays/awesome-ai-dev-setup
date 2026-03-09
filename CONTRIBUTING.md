@@ -34,7 +34,6 @@ Thank you for helping expand this list!
 
 All submissions are evaluated against our [Quality Criteria](/docs/QUALITY_CRITERIA.md). Key requirements:
 
-- Repository must be at least 30 days old
 - At least 1 commit in the past 12 months
 - Must have a README with installation and usage instructions
 - Must have a license file
