@@ -18,8 +18,8 @@ Ready-made project scaffolds that give AI coding agents the context, structure, 
 
 ### Platforms and Standards
 
-- [agentsmd/agents.md](https://github.com/agentsmd/agents.md) - Open standard for guiding coding agents. ![GitHub Stars](https://img.shields.io/github/stars/agentsmd/agents.md?style=flat-square)
 - [agentscope-ai/CoPaw](https://github.com/agentscope-ai/CoPaw) - Self-hosted personal AI assistant with extensible skills and multi-channel support. ![GitHub Stars](https://img.shields.io/github/stars/agentscope-ai/CoPaw?style=flat-square)
+- [agentsmd/agents.md](https://github.com/agentsmd/agents.md) - Open standard for guiding coding agents. ![GitHub Stars](https://img.shields.io/github/stars/agentsmd/agents.md?style=flat-square)
 - [LAION-AI/Open-Assistant](https://github.com/LAION-AI/Open-Assistant) - Chat-based AI assistant with third-party integrations and dynamic information retrieval. ![GitHub Stars](https://img.shields.io/github/stars/LAION-AI/Open-Assistant?style=flat-square)
 - [leon-ai/leon](https://github.com/leon-ai/leon) - Open-source personal assistant with modular skills architecture on your server. ![GitHub Stars](https://img.shields.io/github/stars/leon-ai/leon?style=flat-square)
 - [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) - Microsoft's SDK for building LLM-powered agents and plugins in Python, C#, and Java. ![GitHub Stars](https://img.shields.io/github/stars/microsoft/semantic-kernel?style=flat-square)
