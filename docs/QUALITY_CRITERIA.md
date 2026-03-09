@@ -6,40 +6,35 @@ Awesome lists are curations, not collections. Every entry must meet a quality ba
 
 All new submissions must meet **every** criterion below:
 
-### 1. Repository Age
-
-- Minimum **30 days** since first meaningful commit.
-- Filters out experimental or abandoned weekend projects.
-
-### 2. Activity
+### 1. Activity
 
 - At least **1 commit in the past 12 months**.
 - Demonstrates active or stable maintenance.
 
-### 3. Documentation
+### 2. Documentation
 
 - Must have a README containing:
   - What the project does
   - Installation instructions
   - Usage examples or getting started guide
 
-### 4. Public Accessibility
+### 3. Public Accessibility
 
 - Must be publicly accessible on GitHub (or similar platform).
 - No private repos, no broken links.
 
-### 5. Relevance
+### 4. Relevance
 
 - Must be directly relevant to AI-assisted development.
 - Valid categories: agent templates, config/rules, skills/plugins, CLI scaffolding, cross-platform tools.
 - General-purpose AI/ML libraries do not qualify.
 
-### 6. Originality
+### 5. Originality
 
 - Must not be a fork without significant original work.
 - "Significant" means substantial new features, different scope, or meaningful adaptation beyond the upstream project.
 
-### 7. License
+### 6. License
 
 - Must include a license file in the repository.
 - Open-source licenses preferred (MIT, Apache 2.0, CC0, etc.).

@@ -14,7 +14,6 @@
 
 <!-- Check all that apply. See /docs/QUALITY_CRITERIA.md for details. -->
 
-- [ ] Project is at least 30 days old
 - [ ] Project has at least 1 commit in the past 12 months
 - [ ] Project has a README with installation and usage instructions
 - [ ] Project is publicly accessible
