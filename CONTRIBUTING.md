@@ -32,7 +32,7 @@ Thank you for helping expand this list!
 
 ## Quality Criteria
 
-All submissions are evaluated against our [Quality Criteria](/docs/QUALITY_CRITERIA.md). Key requirements:
+All submissions are evaluated against our [Quality Criteria](docs/QUALITY_CRITERIA.md). Key requirements:
 
 - At least 1 commit in the past 12 months
 - Must have a README with installation and usage instructions
@@ -44,7 +44,7 @@ New submissions are automatically validated by our CI pipeline, which checks rep
 
 ## Entry Removal
 
-Entries may be removed if they no longer meet quality standards. See the [removal policy](/docs/QUALITY_CRITERIA.md#removal--deprecation-policy) for details.
+Entries may be removed if they no longer meet quality standards. See the [removal policy](docs/QUALITY_CRITERIA.md#removal--deprecation-policy) for details.
 
 ## Review Process
 
